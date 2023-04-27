@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main(){
+
+    int price, paid, leftover;
+    printf("물건 값을 입력하시오 : ");
+    scanf("%d", &price);
+    printf("투입한 금액을 입력하시오 : ");
+    scanf("%d", &paid);
+    leftover = paid - price;
+
+    int m1000 = leftover/1000;
+    leftover = leftover %1000;
+    printf("천원권 : %d장\n");
+
+    int m500 = leftover / 500;
+    leftover = leftover%500;
+    printf("오백원 동전 : %d개\n", m500);
+
+    int m100 = leftover / 100;
+    leftover = leftover%100;
+    printf("백원 동전 : %d개\n", m100);
+    return 0;
+}
