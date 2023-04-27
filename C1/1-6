@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main(){
+
+    int x;
+    printf("the size of x is %d", sizeof(x));
+    printf("the char size of x is %d\n", sizeof(char));
+    printf("the int size of x is %d\n", sizeof(int));
+    printf("the short size of x is %d\n", sizeof(short));
+    printf("the long size of x is %d\n", sizeof(long));
+    printf("the float size of x is %d\n", sizeof(float));
+    printf("the double size of x is %d\n", sizeof(double));
+    return 0;
+}
