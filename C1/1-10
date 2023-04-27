@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+int main(){
+
+    char code = 'C';
+    printf("%d %d %d\n", code, code+2,code+4);
+    printf("%c %c %c",code, code+2,code+4 );
+    return 0;
+}
