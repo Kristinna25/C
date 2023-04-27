@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main(){
+
+    double rate,dollar,won;
+    printf("환율을 입력하시오 : ");
+    scanf("%lf", &rate);
+
+    printf("원화 금액을 입력하시오 : ");
+    scanf("%lf", &won);
+
+    printf("원화 %lf원은 %lf달러입니다.", won, won/rate);
+    
+    return 0;
+}
