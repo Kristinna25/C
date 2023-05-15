@@ -1,4 +1,4 @@
-#include <stdio.h>
+//난수를 사용하여 동전의 앞면 횟수와 뒷면 횟수 찾기
 #include <time.h>
 #include <stdlib.h>
 
