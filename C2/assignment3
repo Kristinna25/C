@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+
+  //floor랑 ceil을 사둉함
+  double x = 3.78;
+  double result = floor(x);
+  printf("(floor)%.1lf\n", result);
+  result = ceil(x);
+  printf("(ceil)%.1lf\n", result);
+
+  //power랑 square root 사용
+  double y = pow(3,6);
+  printf("power 사용 : %.1f\n", y);
+  double z = sqrt(81);
+  printf("square root 사용 : %.0lf\n", z);
+
+  //sin, cos 사용
+  double a = 0, b = 2.3;
+  printf("a의 sin 상용 : %.1lf b의 sin 상용 :%.1lf\n", sin(a),sin(b));
+  printf("a의 cos 상용 : %.1lf b의 sin 상용 :%.1lf\n", cos(a),cos(b));
+
+
+  return 0;
+}
