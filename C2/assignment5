@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <time.h>
+
+int main(){
+
+  time_t start, end; //variable, unsigned long
+  start = time(NULL); //최근 시간
+  printf("10초가 되면 아무 키나 누르세요\n");
+  while(2){ //0 아닌 아무 정수나 참
+    if(getchar()){  //사용자가 아무 키나 누를 때
+      break; //반복문에서 빠져나옴
+    }
+  }
+  printf("종료되었습니다.\n");
+  end = time(NULL);//최근 시간
+  printf("경과된 시간은 %ld 초입니다. \n", end - start); //시작할 때부터 키를 누를 때까지의 시간
+
+  return 0;
+}
