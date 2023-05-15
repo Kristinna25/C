@@ -1,0 +1,51 @@
+//난수를 사용하여 car racing game한다. 제일 빨리 가는 car가 이긴다
+#include <stdio.h>
+#include <time.h> 
+#include <stdlib.h>
+
+void racingCar(int carNo, int distance); //함수원형
+int fur(int x,int y, int z);
+
+int main(){
+
+  int distance1 = 0, distance2 = 0, distance3 = 0;
+  srand((unsigned)time(NULL)); //pseudo random number, seeded from clock
+  
+    distance1 = rand() % 1000; //0부터 999사이의 난수
+    distance2 = rand() % 1000; //0부터 999사이의 난수
+    distance3 = rand() % 1000; //0부터 999사이의 난수
+    racingCar(1,distance1);
+    racingCar(2,distance2);
+    racingCar(3,distance3);
+    int furthest = fur(distance1,distance2,distance3);
+    if(furthest == 1){
+      printf("car 1 이긴다");
+    }
+    else if(furthest == 2){
+      printf("car 2 이긴다");
+    }
+    else{
+      printf("car 3 이긴다");
+    }
+  return 0;
+}
+
+void racingCar(int carNo, int distance){
+
+  printf("car #%d", carNo);
+  for(int i=0;i<distance/10;i++){
+    printf("*");
+  }
+  printf("\n");
+}
+int fur(int x,int y,int z){
+  if(x > y && x > z){
+    return 1;
+  }
+  else if(y > x && y > z){
+    return 2;
+  }
+  else{
+    return 3;
+  }
+}
