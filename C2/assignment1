@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+
+int tossing(void);
+
+int main(){
+
+  int heads = 0;
+  int tails = 0;
+  srand((unsigned)time(NULL)); //난수, seeded from clock
+  
+  //동전을 100변 던짐으로 1번째부터 100번째끼지 반복
+  for(int i=1;i<=100;i++){
+    if(tossing() == 1){ // 함수로써 변환값이 1과 같으면 head를 1증가시칸다
+      heads++;
+    }
+    else{ //변환값이 1이 아닌 경우
+      tails++;
+    }
+  }
+  printf("동전의 앞면 : %d", heads);
+  printf("\n동전의 뒷면 : %d", tails);
+
+  return 0;
+}
+int tossing(void){
+  int head;
+  head = rand() % 2; // 난구를 앞면과 뒷면 2개중 1만 나온다, 0과 1중 하나 난수 
+  return head;
+}
