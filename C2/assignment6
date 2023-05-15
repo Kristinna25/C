@@ -1,0 +1,23 @@
+//나무 높이 찾는 문제
+#include <math.h> //library function 수학을 위해
+#include <stdio.h>
+
+int main(void) {
+double height, distance, tree_height, degrees, radians; 
+
+printf("측정자와 나무의 거리(unit=meter): ");
+scanf("%lf", &distance); 
+
+printf("측정자의 키(unit=meter): ");
+scanf("%lf", &height); 
+
+printf("각도(unit=degree): ");
+scanf("%lf", &degrees);
+
+radians = degrees * (3.141592 / 180.0);
+
+tree_height = tan(radians) * distance + height; //tan = opposite/adjacent므로 
+printf("나무의 높이(단위는 미터): %.2lf \n", tree_height);
+
+return 0; 
+}
