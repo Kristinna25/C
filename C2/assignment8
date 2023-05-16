@@ -1,0 +1,116 @@
+//공학용 계산기 프로 그램 작성
+#include <stdio.h>
+#include <math.h>
+
+int menu(void);  //함수 원형
+void fact();
+void sine();
+void logBase10();
+void squareRoot();
+void permutation();
+void combination();
+int factorial(int x);
+
+int main(void) {
+  while(1){ //참일 때  반복문에 들어간다
+    switch(menu()){ /switch문을 사용하여 menu안에 있는 것들과 하나씩 비교
+      case 1:fact();  
+        break; //case 1과 같으면 fact함수 실행, 밑에 있는 부분들 실행 안 하고 switch문을 빠져나온
+      case 2:sine();
+        break; //case 2과 같으면 sine함수 실행, 밑에 있는 부분들 실행 안 하고 switch문을 빠져나온
+      case 3:logBase10();
+        break; //case 3과 같으면 logBase10함수 실행, 밑에 있는 부분들 실행 안 하고 switch문을 빠져나온
+      case 4:squareRoot();
+        break; //case 4과 같으면 squareRoot함수 실행, 밑에 있는 부분들 실행 안 하고 switch문을 빠져나온
+      case 5:permutation();
+        break; //case 5과 같으면 permutation함수 실행, 밑에 있는 부분들 실행 안 하고 switch문을 빠져나온
+      case 6:combination();
+        break; //case 6과 같으면 combination함수 실행, 밑에 있는 부분들 실행 안 하고 switch문을 빠져나온
+      case 7:printf("종료합니다.\n");
+        return 0; //case 7과 printf statement이 화면에 뜨고 밑에 있는 부분 실행 안하고 switch문을 빠져나온
+      default:printf("잘못된 선택입니다.\n");  //위에 있는 것들과 다르면 이부분 진행
+        break;
+    }
+  }
+  return 0;
+}
+//switch문에 들어오면 menu 함수 실행
+int menu(void){
+  int no; 
+  printf("1.팩토리얼\n");
+  printf("2.싸인\n"); 
+  printf("3.로그(base 10)\n"); 
+  printf("4.제곱근\n"); 
+  printf("5.순열(nPr)\n"); 
+  printf("6.조합(nCr)\n"); 
+  printf("7.종료\n"); 
+  printf("선택해주세요: "); 
+  scanf("%d", &no);
+  return no;
+}
+ 
+void fact(){ //menu함수에 있는 질문들 실행하고 나서 keyboard에 1를 누르면 이 부분 실행
+  int no, result = 1;
+  printf("정수 : ");
+  scanf("%d", &no);
+  for(int i=1;i<=no;i++){
+    result *= i;
+  }
+  printf("결과 = %d\n", result);
+}
+void sine(){ //menu함수에 있는 질문들 실행하고 나서 keyboard에 2를 누르면 이 부분 실행
+
+  double no, result;
+  printf("각도를 입력하시오: "); 
+  scanf("%lf", &no);
+  result = sin(no);
+  printf("결과 = %lf\n\n", result);
+}
+void logBase10(){ //menu함수에 있는 질문들 실행하고 나서 keyboard에 3를 누르면 이 부분 실행
+
+  double no, result; 
+  printf("실수값을 입력하시오: "); 
+  scanf("%lf", &no);
+  if (no <= 0.0){
+    printf("오류\n"); 
+  } 
+  else{
+    result = log10(no);
+    printf("결과 = %lf\n\n", result);
+  }
+}
+void squareRoot(){ //menu함수에 있는 질문들 실행하고 나서 keyboard에 4를 누르면 이 부분 실행
+  double no;
+  printf("정수를 입력하시요 : ");
+  scanf("%lf", &no);
+  printf("제급근은 %.0lf\n", sqrt(no));
+}
+int factorial(int x){ //5과 6을 위해 factorial함수 
+  int i, result = 1;
+  for (i = 1; i <= x; i++){
+    result *= i;
+  }    
+return result;
+}
+
+void permutation(){ //menu함수에 있는 질문들 실행하고 나서 keyboard에 5를 누르면 이 부분 실행
+
+  int x,y,xFac,result;
+  printf("정수를 입력하시요 : ");
+  scanf("%d", &x);
+  printf("정수를 입력하시요 : ");
+  scanf("%d", &y);
+  
+  result = factorial(x) / factorial(x-y);
+  printf("순열(nPr) : %d\n", result);
+}
+void combination(){ //menu함수에 있는 질문들 실행하고 나서 keyboard에 6를 누르면 이 부분 실행
+
+  int x,y, result;
+  printf("정수를 입력하시요 : ");
+  scanf("%d", &x);
+  printf("정수를 입력하시요 : ");
+  scanf("%d", &y);
+  result = factorial(x)/(factorial(x-y) *factorial(y));
+  printf("조합(nCr) : %d\n", result);
+}
