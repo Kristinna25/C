@@ -1,0 +1,30 @@
+//삼각함수 그리기
+#include <stdio.h>
+#include <math.h>
+#define PI 3.141592
+
+double radian(double degree);
+void drawbar(int height);
+
+int main(){
+
+  int deg, x, y;
+  for (deg= 0; deg <= 90; deg += 10) { //degree를 0부터 90까지 반복시킨다, degree를 한번에 10씩 증가시킨
+  y = (int)(60 * sin(radian((double)deg)) + 0.5); //operator precedence때문에 radian function을 문저 호출 후 다른 것들 차례로 풀려
+  drawbar(y); //drawbar 함수를 호출
+  }
+  return 0;
+}
+double radian(double degree){ //radian함수를 호출할 때 
+
+  double value;
+  value = PI * degree / 180.0;
+  return value;
+}
+void drawbar(int height){ //drawbar함수를 호출할 때 
+
+  for (int i = 0; i < height; i++){
+    printf("*");
+  }
+    printf("\n");
+}
